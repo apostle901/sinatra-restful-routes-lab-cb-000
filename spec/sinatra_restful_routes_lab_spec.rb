@@ -109,7 +109,7 @@ describe "Recipe App" do
       }
 
       post '/recipes', params
-      #follow_redirect!
+      follow_redirect!
     end
     it "creates a new recipe and saves to the database" do
       expect(Recipe.all.count).to eq(3)
