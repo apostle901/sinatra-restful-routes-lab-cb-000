@@ -10,6 +10,9 @@ class ApplicationController < Sinatra::Base
     @recipes = Recipe.all
     erb :"/recipe/index"
   end
+  get "/recipes/new" do
+    erb :"/recipe/new"
+  end
   get "/recipes/:id" do
     @recipe = Recipe.find(params[:id])
     erb :"/recipe/show"
@@ -21,8 +24,5 @@ class ApplicationController < Sinatra::Base
   get "/recipes/:id/edit" do
     @recipe = Recipe.find(params[:id])
     erb :"/recipe/edit"
-  end
-  get "/recipes/new" do
-    erb :"/recipe/new"
   end
 end
