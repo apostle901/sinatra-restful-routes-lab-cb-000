@@ -18,4 +18,8 @@ class ApplicationController < Sinatra::Base
     Recipe.delete(params[:id])
     redirect to("/recipes")
   end
+  get '/recipes/:id/edit' do
+    @recipe = Recipe.find(params[:id])
+    erb :"/recipes/edit"
+  end
 end
