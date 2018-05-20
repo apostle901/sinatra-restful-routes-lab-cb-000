@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   end
   post '/recipes' do
     Recipe.create(name: params[:name], ingredients: params[:ingredients], cook_time: params[:cook_time])
-    erb :"/recipes/#{Recipe.last.id}"
+    redkrect to ("/recipes/#{Recipe.last.id}")
   end
   get "/recipes/new" do
     erb :"/recipe/new"
